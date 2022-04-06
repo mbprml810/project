@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="75e50a7f-33c5-40a7-9cee-5cd79fd23821" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="munit-test-caseFlow" doc:id="46fbcdb6-27fa-4f55-9791-36df207d8236" >
+		<http:listener doc:name="Listener" doc:id="95d5e429-4d6f-4d61-b142-f50a7131a7c6" config-ref="HTTP_Listener_config" path="/munit"/>
+		<logger level="INFO" doc:name="Logger" doc:id="b50a7569-7ebb-47fa-8c46-29946520e585" message="hello munit test case have done "/>
+	</flow>
+</mule>
